@@ -12,6 +12,7 @@
 
 <body>
 	<section class="landing_page" id="landing-page">
+		<img id="landing-page-background" src="image/bg1.jpg" alt="image arriere plan"/>
 		<header>
 			<div id="header-logo">
 				<img src="image/logo.png" alt="logo yrys photo"/>
@@ -25,8 +26,8 @@
 				</ul>
 			</div>
 			<div id="header-social-network">
-				<img src="image/logo_fb.png" alt="logo facebook"/>
-				<img src="image/logo_insta.png" alt="logo instagram"/>
+				<a href="https://www.facebook.com/yrysphoto" target="_blank"><img src="image/logo_fb.png" alt="logo facebook"/></a>
+				<a href="https://www.instagram.com/yrysphoto" target="_blank"><img src="image/logo_insta.png" alt="logo instagram"/></a>
 			</div>
 		</header>
 		<div id="main-text">
@@ -41,6 +42,28 @@
 	<section id="section-2">
 		<h1>présentation</h1>
 	</section>
+	
+	
+	<script type="text/javascript">
+		var i = 0;
+		var images = ["image/bg1.jpg", "image/bg2.jpg", "image/bg3.jpg", "image/bg4.jpg", "image/bg5.jpg", "image/bg6.jpg"];
+		var time = 5000;
+		
+		function changeImg() {
+			document.getElementById("landing-page-background").src = images[i];
+			document.getElementById("landing-page-background").style.opacity = "1";
+			
+			if (i<images.length-1) {
+				i++;	
+			} else {
+				i=0;
+			}
+			setTimeout("changeImg()", time);
+		}
+		window.onload = changeImg;	
+		
+	</script>
+	
 </body>
 
 </html>
